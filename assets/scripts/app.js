@@ -1,3 +1,11 @@
+class DOMHelper {
+  static moveElement(elementId, newDestinationSelector) {
+    const element = document.querySelector(elementId);
+    const destinationElement = document.querySelector(newDestinationSelector);
+    destinationElement.append(element);
+  }
+}
+
 class Tooltip {}
 
 class ProjectItem {
@@ -15,7 +23,10 @@ class ProjectItem {
     const switchButton = projectItemElement.querySelector(
       "button:last-of-type"
     );
-    switchButton.addEventListener("click", this.updateProjectListsHandler);
+    switchButton.addEventListener(
+      "click",
+      this.updateProjectListsHandler.bind(null, this.id)
+    );
   }
 }
 
@@ -36,8 +47,9 @@ class ProjectList {
     this.switchHandler = switchHandlerFunction;
   }
 
-  addProject() {
-    console.log(this);
+  addProject(project) {
+    this.projects.push(project);
+    DOMHelper.moveElement(project.id, `#${this.type}-projects ul`);
   }
 
   switchProject(projectId) {
