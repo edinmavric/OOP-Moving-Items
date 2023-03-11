@@ -52,6 +52,7 @@ class Tooltip extends Component {
   create() {
     const tooltipElement = document.createElement("div");
     tooltipElement.className = "card";
+    tooltipElement.textContent = "Some info about cards...";
     tooltipElement.addEventListener("click", this.closeTooltip);
     this.element = tooltipElement;
   }
