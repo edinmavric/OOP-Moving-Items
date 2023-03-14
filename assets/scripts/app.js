@@ -171,9 +171,10 @@ class App {
       activeProjectsList.addProject.bind(activeProjectsList)
     );
 
-    document
-      .getElementById("start-analytics-btn")
-      .addEventListener("click", this.startAnalytics);
+    // document
+    // .getElementById("start-analytics-btn")
+    // .addEventListener("click", this.startAnalytics);
+    setTimeout(this.startAnalytics, 3000);
   }
 
   // const someScript = document.createElement("script");
