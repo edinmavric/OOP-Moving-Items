@@ -1,0 +1,7 @@
+{
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
+  "prettier.htmlWhitespaceSensitivity": "strict",
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true
+}
